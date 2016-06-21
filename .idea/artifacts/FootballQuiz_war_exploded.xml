@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="FootballQuiz:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/FootballQuiz_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="FootballQuiz/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="FootballQuiz" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
