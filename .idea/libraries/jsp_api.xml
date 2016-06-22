@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="jsp-api">
+    <CLASSES>
+      <root url="jar://C:/xampp/tomcat/lib/jsp-api.jar!/" />
+      <root url="jar://C:/xampp/tomcat/lib/servlet-api.jar!/" />
+      <root url="file://C:/xampp/tomcat" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://C:/xampp/tomcat/webapps/docs/appdev/sample/src" />
+      <root url="file://C:/xampp/tomcat/webapps/examples/WEB-INF/classes" />
+      <root url="file://C:/xampp/tomcat/webapps/examples/WEB-INF/jsp/applet" />
+      <root url="file://C:/xampp/tomcat/webapps/examples/jsp/plugin/applet" />
+    </SOURCES>
+  </library>
+</component>
