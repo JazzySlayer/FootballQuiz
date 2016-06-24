@@ -11,6 +11,8 @@
     <title></title>
   </head>
   <body>
-
+      <form action="loginReg">
+         <input type="submit" value="Submit">
+      </form>
   </body>
 </html>
