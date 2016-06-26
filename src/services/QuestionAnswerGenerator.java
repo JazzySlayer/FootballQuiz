@@ -13,6 +13,7 @@ import java.sql.Statement;
 public class QuestionAnswerGenerator {
 
     public String questionGenerator(int randnum) throws SQLException, ClassNotFoundException {
+        System.out.println(randnum);
         Connection databaseconnector = new DatabaseConnector().getConn();
         String currentQuestionline="";
         String sql = "select * from question where id = "+randnum+"";
@@ -21,7 +22,6 @@ public class QuestionAnswerGenerator {
         while(resultSet.next()){
             currentQuestionline = resultSet.getString("question");
         }
-        System.out.println("currentQuestionline = " + currentQuestionline);
         databaseconnector.close();
         return currentQuestionline;
     }
