@@ -7,8 +7,18 @@
         <servlet-name>LoginRegServlet</servlet-name>
         <servlet-class>controller.LoginRegServlet</servlet-class>
     </servlet>
+    
+    <servlet>
+        <servlet-name>QuestionAnswerServlet</servlet-name>
+        <servlet-class>controller.QuestionAnswerServlet</servlet-class>
+    </servlet>
+    
     <servlet-mapping>
         <servlet-name>LoginRegServlet</servlet-name>
         <url-pattern>/loginReg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuestionAnswerServlet</servlet-name>
+        <url-pattern>/questionAnswer</url-pattern>
     </servlet-mapping>
 </web-app>

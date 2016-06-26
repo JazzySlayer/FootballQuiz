@@ -18,12 +18,20 @@ public class QuestionAnswerServlet extends HttpServlet {
         String randNum = request.getParameter("randNum");
         String correct = request.getParameter("correct");
         String choosen = request.getParameter("man");
-        System.out.println("choosen + correct = " + choosen + correct);
+        System.out.println("choosen = " + choosen +" correct = "+ correct +" randNum = "+ randNum +" correct = "+ correct);
         String[] aftersplit;
         String question = "";
         String[] answer = new String[5];
-        aftersplit = randNum.split(",", 2);
+        if(randNum.length()>3){
+            aftersplit = randNum.split(",", 2);
+        }
+        else if (randNum.length() > 1) aftersplit = (randNum.split(","));
+        else {
+            randNum+="-,-";
+            aftersplit = randNum.split(",");
+        }
         try {
+            System.out.println(Integer.parseInt(aftersplit[0]));
             question = questionAnswerGenerator.questionGenerator(Integer.parseInt(aftersplit[0]));
             answer=questionAnswerGenerator.answerGenerator(Integer.parseInt(aftersplit[0]));
         } catch (SQLException e) {
@@ -37,9 +45,13 @@ public class QuestionAnswerServlet extends HttpServlet {
         request.setAttribute("answer4",answer[3]);
         request.setAttribute("correct",answer[4]);
         request.setAttribute("question",question);
-        request.setAttribute("randNum",aftersplit[1]);
-        request.getRequestDispatcher("/views/quizPage.jsp").forward(request,response);
-
+        if(aftersplit.length>1){
+            request.setAttribute("randNum",aftersplit[1]);
+            request.getRequestDispatcher("/views/quizPage.jsp").forward(request, response);
+        }
+        else if(aftersplit[0]=="-"&&aftersplit[1]=="-"){
+            request.getRequestDispatcher("/views/quizPage.jsp").forward(request,response);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

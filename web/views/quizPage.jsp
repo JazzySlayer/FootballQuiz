@@ -20,29 +20,31 @@
         <h1>Football Quiz</h1>
     </div>
     <div class="jumbotron">
-        <div class="container">
-            <div class="row">
-                <div class="alert alert-success" role="alert">
-                    ${question}
+        <form action="questionAnswer" method="post">
+            <div class="container">
+                <div class="row">
+                    <div class="alert alert-success" role="alert">
+                        ${question}
+                    </div>
+                    <div class="col-md-5">
+                        <button type="submit" class="btn btn-default test" value="${answer1}" name="choosen">${answer1}</button>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5">
+                        <button type="submit" class="btn btn-default test" value="${answer2}" name="choosen">${answer2}</button>
+                    </div>
+                    <div class="col-md-5">
+                        <button type="submit" class="btn btn-default test" value="${answer3}" name="choosen">${answer3}</button>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5">
+                        <button type="submit" class="btn btn-default test" value="${answer4}" name="choosen">${answer4}</button>
+                    </div>
+                    <input type="hidden" name="randNum" value="${randNum}">
+                    <input type="hidden" name="correct" value="${correct}">
                 </div>
-                <div class="col-md-5">
-                    <button type="button" class="btn btn-default test">${answer1}</button>
-                </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-5">
-                    <button type="button" class="btn btn-default test">${answer2}</button>
-                </div>
-                <div class="col-md-5">
-                    <button type="button" class="btn btn-default test">${answer3}</button>
-                </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-5">
-                    <button type="button" class="btn btn-default test">${answer4}</button>
-                </div>
-                <input type="hidden" name="randNum" value="${randNum}">
-                <input type="hidden" name="correct" value="${correct}">
             </div>
-        </div>
+        </form>
 
     </div>
 </div>
