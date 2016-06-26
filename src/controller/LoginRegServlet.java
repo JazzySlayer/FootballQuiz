@@ -18,21 +18,15 @@ public class LoginRegServlet extends javax.servlet.http.HttpServlet {
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         String randNum = randomNumberGenerator();
-        System.out.println("randNum = " + randNum);
         String[] aftersplit;
         String question = "";
         String[] answer = new String[5];
         aftersplit = randNum.split(",", 2);
-        System.out.println("09----------->??>>>>>>>>>>>>"+aftersplit[0]);
         String nums = aftersplit[0];
         int num = Integer.parseInt(nums);
         try {
             question = questionAnswerGenerator.questionGenerator(num);
-            System.out.println("question1 = " + question);
             answer=questionAnswerGenerator.answerGenerator(num);
-            for(String item: answer){
-                System.out.println("item3 = " + item);
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
