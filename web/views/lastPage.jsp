@@ -11,6 +11,6 @@
     <title></title>
 </head>
 <body>
-   You are in this page
+   You are in this page.Your score is ${score}
 </body>
 </html>
